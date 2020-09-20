@@ -1,0 +1,162 @@
+<header>
+    <img src="http://www.beyegroup.com/Images/NewLogo.jpg" alt="beye">
+</header>
+<div class="row">
+    <div class="side-nav column flex-1">
+        <h2>BEYE Group</h2>
+        <ul>
+            <li>Overviews</li>
+            <li>Customers</li>
+            <li>Customer Deposits</li>
+            <li>Loans Analytics</li>
+            <li>Cards</li>
+            <li>Branch Counter</li>
+            <li>Branch 360</li>
+            <li>Financials</li>
+            <li>ATM</li>
+            <li>Risk</li>
+            <li>E-Channels</li>
+        </ul>
+    </div>
+    <div class="dashboard column flex-2">
+    <div class="overlay" *ngIf="showSubPopUP"></div>
+    <div class="card-conatiner">
+        <div class="card net-income" [ngClass]="{'scale-card' : showSubPopUP, 'show-charts' : showPieCharts, 'h-100' : showSubPopUP}">
+            <h2 class="income" (click)="showPieChart()">16,821.3<span>Mn</span></h2>
+            <p class="text" (click)="showPieChart()">Net Income - YTD</p>
+            <svg (click)="showPopUp()" class="drag-header-more" data-target="options1" fill="#525252" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M0 0h24v24H0z" fill="none"/><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
+            </svg>
+            <div class="row mt-10 chart-analys">
+                <div class="column flex-1 w-60">
+                    <app-line-chart *ngIf="!showSubPopUP"></app-line-chart>
+                </div>
+                <div class="column flex-1 analyze">
+                   <div>YOY - Growth</div>
+                   <div class="mb-2">6% <img src="../../assets/green-arrow.svg">
+                   </div>
+                   <div>YOY - Budget</div>
+                   <div>76%  <img src="../../assets/red-arrow.svg"></div>
+                </div>
+            </div>
+
+            <div class="pop-up row" [ngClass]="{'shown' : showPopUP , 'animate-to-right' :showSubPopUP}">
+                <div class="close" (click)="hidePopUp()">X</div>
+                <div class="column flex-1">
+                    <img src="../../assets/change.svg">
+                    <span>Change KPI</span> 
+                </div>
+                <div class="column flex-1">
+                    <img src="../../assets/down-arrow.svg">
+                    <span>Drilldown</span> 
+                </div>
+                <div class="column flex-1">
+                    <img src="../../assets/analyze.svg">
+                    <span>Analyze</span> 
+                </div>
+                <div class="column flex-1">
+                    <img src="../../assets/screen.svg">
+                    <span>Related Screens</span> 
+                </div>
+                <div class="column flex-1">
+                    <img src="../../assets/info.svg">
+                    <span>KPI Info</span> 
+                </div>
+
+                <div class="column flex-1" [ngClass]="{'show-sub-left' : showSubPopUP}" (click)="showSubList()">
+                    <img src="../../assets/dimention.svg">
+                    <span>Dimintion</span> 
+                </div>
+
+            </div>
+            <div class="pop-up row" [ngClass]="{'show-sub-menu' : showSubPopUP}">
+                <div class="close" (click)="hideSubPopUp()">X</div>
+                <div class="sub-list">
+                    <h3>Dimintion<img src="../../assets/dim-black.svg"> </h3>
+                    <ul>
+                        <li><strong>Group</strong></li>
+                        <li>Customer Geography</li>
+                        <li>Customer Demographics</li>
+                        <li>Customer Employment Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="card gross" *ngIf="!showPieCharts">
+            <h2 class="income">59,992.5<span>K</span></h2>
+            <p class="text">Gross Revenue - YTD</p>
+            <svg class="drag-header-more" data-target="options1" fill="#525252" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M0 0h24v24H0z" fill="none"/><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
+            </svg>
+            <div class="row mt-10 chart-analys">
+                <div class="column flex-1 w-60">
+                    <app-line-chart-two></app-line-chart-two>
+                </div>
+                <div class="column flex-1 analyze">
+                    <div>YOY - Growth</div>
+                    <div class="mb-2">6% <img src="../../assets/red-arrow.svg">
+                    </div>
+                    <div>YOY - Budget</div>
+                    <div>76%  <img src="../../assets/green-arrow.svg"></div>
+                 </div>
+            </div>
+        </div>
+        <div class="card revenue" *ngIf="!showPieCharts">
+            <h2 class="income">42,711.0<span>K</span></h2>
+            <p class="text">Net Revenue - YTD</p>
+            <svg class="drag-header-more" data-target="options1" fill="#525252" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M0 0h24v24H0z" fill="none"/><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
+            </svg>
+            <div class="row mt-10 chart-analys">
+                <div class="column flex-1 w-60">
+                    <app-line-chart-three></app-line-chart-three>
+                </div>
+                <div class="column flex-1 analyze">
+                    <div>YOY - Growth</div>
+                    <div class="mb-2">6% <img src="../../assets/green-arrow.svg">
+                    </div>
+                    <div>YOY - Budget</div>
+                    <div>76%  <img src="../../assets/red-arrow.svg"></div>
+                 </div>
+            </div>
+        </div>
+        <div class="card net-interest" *ngIf="!showPieCharts">
+            <h2 class="income">30,460.0<span>K</span></h2>
+            <p class="text">Net Interest Income - YTD</p>
+            <svg class="drag-header-more" data-target="options1" fill="#525252" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M0 0h24v24H0z" fill="none"/><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path>
+            </svg>
+            <div class="row mt-10 chart-analys">
+                <div class="column flex-1 w-60">
+                    <app-line-chart-four></app-line-chart-four>
+                </div>
+                <div class="column flex-1 analyze">
+                    <div>YOY - Growth</div>
+                    <div class="mb-2">6% <img src="../../assets/green-arrow.svg">
+                    </div>
+                    <div>YOY - Budget</div>
+                    <div>76%  <img src="../../assets/red-arrow.svg"></div>
+                 </div>
+            </div>
+        </div>
+
+
+        <div class="card pie-charts" *ngIf="showPieCharts" [ngClass]="{'h-100' : showSubPopUP}">
+            <h2>Net Income <span>- By Bl</span></h2>
+            <div class="row mt-10">
+                <div class="column flex-1 w-50">
+                    <app-pie-chart></app-pie-chart>
+                    <div class="centered-pie">Today</div>
+                </div>
+                <div class="column flex-1 w-50">
+                    <app-pie-chart></app-pie-chart>
+                    <div class="centered-pie">Last Year</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    </div>
+</div>
+
