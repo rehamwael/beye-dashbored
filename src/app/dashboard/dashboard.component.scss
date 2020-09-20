@@ -11,7 +11,7 @@ header{
     height: 92vh;
     h2{
         text-align: center;
-        font-size: 16px;
+        font-size: 13px;
         font-weight: 400;
         letter-spacing: 2px;
         margin: 0;
@@ -22,9 +22,10 @@ header{
         padding: 0;
         li{
             list-style-type: none;
-            padding: 10px 30px 22px;
+            padding: 10px 20px 18px;
             font-weight: 300;
             cursor: pointer;
+            font-size: 12px;
         }
     }
 }
@@ -35,8 +36,8 @@ header{
     width: 100%;
     background: #fcfcfc;
     .card-conatiner{
-        padding-left: 20px;
-        padding-right: 35px;
+        padding-left: 10px;
+        padding-right: 20px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -44,16 +45,17 @@ header{
     }
     .card{
         flex: 1;
-        padding: 10px 30px;
-        height: 200px;
+        padding: 10px 15px;
+        height: 188px;
         background: #fff;
-        margin: 30px 0px 20px 20px;
+        margin: 30px 0px 20px 8px;
         border-radius: 8px;
         box-shadow: 0 0px 8px #f3f3f3;
         position: relative;
+        width: 25%;
         &.scale-card{
-            animation: transformScale 0.5s forwards ease;
-            animation-delay: 1s;
+            animation: transformScale 0.8s forwards ease;
+            animation-delay: 0.9s;
             z-index: 999;
             height: 257px;
             flex: 2;
@@ -65,11 +67,12 @@ header{
         }
          h2{
             color: #525252;
-            font-size: 2.3em;
+            font-size: 2em;
             margin-bottom: 0;
             margin-top: 10px;
+            cursor: pointer;
             span{
-                font-size: 23px;
+                font-size: 20px;
                 font-weight: 300;
                 padding: 0 5px;
             }
@@ -88,11 +91,13 @@ header{
             top: 20px;
             cursor: pointer;
         }
+        .text{
+            font-size: 12px;
+        }
         &.net-income{
             border-bottom: 10px solid #1D3557;
             .text{
                 color: #1D3557;
-                margin-top: 5px;
                 margin-bottom: 12px;
             }
         }
@@ -100,30 +105,27 @@ header{
             border-bottom: 10px solid #457B9D;
             .text{
                 color: #457B9D;
-                margin-top: 5px;
             }
         }
         &.revenue{
             border-bottom: 10px solid #389EFE;
             .text{
                 color: #389EFE;
-                margin-top: 5px;
             }
         }
         &.net-interest{
             border-bottom: 10px solid #A8DADC;
             .text{
                 color: #A8DADC;
-                margin-top: 5px;
             }
         }
     }
 }
 .mt-10{
-    margin-top: 3.3em;
+    margin-top: 2.3em;
 }
 .mb-2{
-    margin-bottom: 10px !important;
+    margin-bottom: 7px !important;
 }
 .card.pie-charts, .card.net-income.show-charts {
     height: 80vh !important;
@@ -153,17 +155,17 @@ header{
     font-size: 11px;
 }
 .row.mt-10.chart-analys .column:nth-child(2) div {
-    font-size: 12px;
+    font-size: 10px;
     text-align: left;
-    padding-left: 30px;
+    padding-left: 10px;
     font-weight: 300;
     color: #656363;
-    line-height: 16px;
+    line-height: 12px;
 
 }
 .overlay{
     animation: transformScale 0.2s ease;
-    animation-delay: 1s;
+    animation-delay: 0.5s;
     position: fixed;
     content: "";
     top: 0;
@@ -195,7 +197,6 @@ header{
         display: flex;
         animation: opacityRevert 1s forwards ease;
         opacity: 0;
-        animation-delay: 1s;
     }
     &.shown{
         display: flex;
@@ -203,7 +204,7 @@ header{
         animation: scale 1s forwards ease;
         transform-origin: 100% 0;
         &.animate-to-right{
-            animation: transformpopUp 0.5s ease-in-out;
+            animation: transformpopUp 1s ease;
         }
         .column{
             animation: scale 1s forwards ease;
@@ -220,24 +221,23 @@ header{
     }
     .column{
         background: #525252;
-        padding: 12px 10px;
+        padding: 12px 4px;
         border-radius: 50%;
-        height: 55px;
-        width: 60px;
+        height: 44px;
         margin-right: 10px;
         margin-left: 10px;
         color: #fff;
         align-items: center;
-        font-size: 8px;
-        margin-bottom: 15px;
-
+        font-size: 7px;
+        margin-bottom: 10px;
+        flex-basis: 21.3%;
         &.show-sub-left{
             animation: opacity 1s forwards ease;
         }
 
         img{
-            width: 40px;
-            height: 30px;
+            width: 37px;
+            height: 21px;
             margin: 5px 0;
             cursor: pointer;
         }
@@ -400,8 +400,7 @@ header{
     }
     to {
         transform: translate(500px, 0);
-        width: 300px;  
-        opacity: 0;
+        width: 300px;
     }
 
 }

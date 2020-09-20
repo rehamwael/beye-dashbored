@@ -29,14 +29,16 @@ export class PieChartComponent {
         lineColor: '#1d90ff',
         font: {
             resizable: false,
-            size: 18
+            size: 16
         },
         backgroundColor: 'transparent',
         borderColor: 'transparent',
         color: '#1d90ff',
-        stretch: 20,
-        padding: 40,
-        text: '%p'
+        stretch: 10,
+        padding: 10,
+        text: '%p',
+        valuePrecision: 1,
+        percentPrecision: 2
       }
     },
   };
